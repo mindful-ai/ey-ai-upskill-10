@@ -6,7 +6,7 @@ from groq import Groq
 
 # Read API key from file
 
-f = open(r"E:\Lenovo Ideapad 330\company-material\digital-workforce-transformation\ai-upskill-9\key-vault\groq\api.key")
+f = open(r"E:\Lenovo Ideapad 330\company-material\digital-workforce-transformation\ai-upskill-10\key-vault\groq\api.key")
 groq_api_key = f.read()
 f.close()
 
