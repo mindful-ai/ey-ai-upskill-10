@@ -45,3 +45,13 @@ You are allowed to use you favourite AI tool to build the code
 
 Optional:
 - Write a Application White Paper on Using AI in your line of work
+
+
+READ:
+
+
+Agent Evaluation
+- Ref: 27-agent-evaluation
+
+Ethical AI
+- Ref: 29-ethical-ai
