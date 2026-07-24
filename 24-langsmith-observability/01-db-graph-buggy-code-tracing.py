@@ -247,9 +247,9 @@ def executor_node(state: AgentState):
     print("EXECUTOR RESULT:", result)
 
     # # -------------------------------------------
-    if "ERROR" in result:
-        print("EXECUTOR ENCOUNTERED ERROR! Setting error status for validation")
-        return {**state, "result": result, "status": "ERROR"}
+    # if "ERROR" in result:
+    #     print("EXECUTOR ENCOUNTERED ERROR! Setting error status for validation")
+    #     return {**state, "result": result, "status": "ERROR"}
     # # -------------------------------------------
 
     return {**state, "result": result}
@@ -259,9 +259,9 @@ def create_validator_node(llm):
     def validator_node(state: AgentState):
 
         # # -----------------------------------------------
-        if state.get("status") == "ERROR":
-            print("VALIDATOR RECEIVED ERROR STATUS! Marking as INVALID without LLM check.")
-            return {**state, "status": "ERROR"}   
+        # if state.get("status") == "ERROR":
+        #     print("VALIDATOR RECEIVED ERROR STATUS! Marking as INVALID without LLM check.")
+        #     return {**state, "status": "ERROR"}   
         # # -----------------------------------------------
         prompt = f"""
 Validate result.
@@ -291,9 +291,9 @@ def route(state: AgentState):
     if state["status"] == "VALID":
         return END
     # #-------------------------------------------------------
-    elif state["status"] == "ERROR":
-        print("ROUTER DETECTED ERROR STATUS! End execution without retrying.")
-        return END
+    # elif state["status"] == "ERROR":
+    #     print("ROUTER DETECTED ERROR STATUS! End execution without retrying.")
+    #     return END
     # #-------------------------------------------------------
     else:
         state["retries"] += 1
@@ -370,4 +370,5 @@ if __name__ == "__main__":
         result = app.invoke(state)
 
         print("FINAL RESULT:", result["result"])
+
 
